@@ -1,5 +1,5 @@
 ---
-title: "Construyendo Horus: Cómo desarrollamos un SIEM/XDR Open Source desde cero en 6 semanas"
+title: "Construyendo Horus"
 date: "2026-04-20"
 category: "Ciberseguridad"
 tags: ["Ciberseguridad", "SIEM", "XDR", "Python", "OpenSource", "ArquitecturaDeSoftware", "MITRE", "InfoSec"]
