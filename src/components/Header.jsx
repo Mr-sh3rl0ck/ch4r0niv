@@ -130,6 +130,18 @@ function Header() {
         <div className="side-menu-header">
           <h2>CH4R0N IV</h2>
           <div className="accent-line"></div>
+
+          {/* Close Button (X) */}
+          <button
+            className="side-menu-close"
+            onClick={() => setMenuOpen(false)}
+            aria-label="Cerrar menú"
+            id="side-menu-close-btn"
+          >
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="22" height="22">
+              <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
         </div>
 
         <div className="side-menu-nav">

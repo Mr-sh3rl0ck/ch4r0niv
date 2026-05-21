@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { getAllPosts } from '../utils/markdown';
 import Sidebar from '../components/Sidebar';
+import OptimizedImage from '../components/OptimizedImage';
 
 function Blog() {
   const [allPosts, setAllPosts] = useState([]);
@@ -70,7 +71,7 @@ function Blog() {
               {/* Post Image */}
               {post.frontmatter.image && (
                 <Link to={`/post/${post.slug}`} className="post-card-image">
-                  <img src={post.frontmatter.image} alt={post.frontmatter.title} />
+                  <OptimizedImage src={post.frontmatter.image} alt={post.frontmatter.title} />
                 </Link>
               )}
 

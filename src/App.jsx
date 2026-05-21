@@ -7,10 +7,13 @@ import Portfolio from './pages/Portfolio'
 import About from './pages/About'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import ScrollToTop from './components/ScrollToTop'
+import ScrollReset from './components/ScrollReset'
 
 function App() {
   return (
     <HashRouter>
+      <ScrollReset />
       <div className="app-layout">
         <Header />
         <main style={{ flex: 1 }}>
@@ -24,6 +27,7 @@ function App() {
         </main>
         <Footer />
       </div>
+      <ScrollToTop />
     </HashRouter>
   )
 }

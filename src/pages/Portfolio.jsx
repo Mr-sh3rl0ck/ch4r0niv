@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useLocation, Link as RouterLink } from 'react-router-dom';
-
+import OptimizedImage from '../components/OptimizedImage';
 import { portfolioData } from '../data/projects';
 
 const categories = [
@@ -35,8 +35,6 @@ function Portfolio() {
       setActiveTab(tabParam);
       setSelectedProject(null);
     }
-
-    window.scrollTo(0, 0);
   }, [location]);
 
   // Animate cards on tab change or when returning from detail view
@@ -81,7 +79,7 @@ function Portfolio() {
           </button>
 
           <div className="portfolio-detail-hero">
-            <img src={selectedProject.image} alt={selectedProject.title} />
+            <OptimizedImage src={selectedProject.image} alt={selectedProject.title} />
           </div>
 
           <div className="portfolio-detail-content">
@@ -136,11 +134,14 @@ function Portfolio() {
             key={project.id}
             className="portfolio-card"
             ref={(el) => (cardsRef.current[i] = el)}
-            onClick={() => setSelectedProject(project)}
+            onClick={() => {
+              setSelectedProject(project);
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
             style={{ cursor: 'pointer' }}
           >
             <div className="portfolio-card-image">
-              <img src={project.image} alt={project.title} />
+              <OptimizedImage src={project.image} alt={project.title} />
               <div className="portfolio-card-overlay">
                 <span>Ver Detalles</span>
               </div>
