@@ -11,8 +11,10 @@ function Header() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    // Always reset menu AND overflow on route changes to prevent scroll lock
     setMenuOpen(false);
     setDropdownOpen(false);
+    document.body.style.overflow = '';
   }, [location]);
 
   useEffect(() => {
@@ -24,9 +26,17 @@ function Header() {
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? 'hidden' : '';
-    return () => { document.body.style.overflow = ''; };
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    // Cleanup: always restore scroll when effect re-runs or component unmounts
+    return () => {
+      document.body.style.overflow = '';
+    };
   }, [menuOpen]);
+
 
   const portfolioSections = [
     { label: 'Desarrollo', hash: 'development' },
@@ -66,7 +76,7 @@ function Header() {
     <>
       <header className={`site-header ${scrolled ? 'scrolled' : ''}`} id="site-header">
         <div className="header-logo">
-          <Link to="/">CH4R0N IV</Link>
+          <Link to="/">AXL</Link>
         </div>
 
         <div className="header-nav">
@@ -128,7 +138,7 @@ function Header() {
       {/* Side Menu */}
       <nav className={`side-menu ${menuOpen ? 'open' : ''}`} id="side-menu">
         <div className="side-menu-header">
-          <h2>CH4R0N IV</h2>
+          <h2>AXL</h2>
           <div className="accent-line"></div>
 
           {/* Close Button (X) */}

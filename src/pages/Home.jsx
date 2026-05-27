@@ -64,7 +64,7 @@ function Home() {
         <div className="hero-bg-grid"></div>
         <div className="hero-content">
           <h1 className="hero-title">
-            <span className="glitch" data-text="CH4R0N IV">CH4R0N IV</span>
+            <span className="glitch" data-text="AXL">AXL</span>
           </h1>
           <p className="hero-subtitle">
             Security Researcher <span className="accent-slash">//</span> Full-Stack Developer
@@ -76,11 +76,6 @@ function Home() {
             <Link to="/portfolio" className="btn-primary">Explorar Portafolio</Link>
             <Link to="/blog" className="btn-secondary">Blog</Link>
           </div>
-        </div>
-        
-        <div className="hero-scroll">
-          <div className="mouse"></div>
-          <span>Desliza para explorar</span>
         </div>
       </section>
 
@@ -135,7 +130,7 @@ function Home() {
                 <p className="post-item-excerpt">{post.frontmatter.excerpt}</p>
               </div>
               <div className="post-item-arrow">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="18" height="18">
                   <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>

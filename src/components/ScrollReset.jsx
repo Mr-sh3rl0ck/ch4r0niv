@@ -9,15 +9,16 @@ function ScrollReset() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    // Override global smooth scroll behavior temporarily for instant route transitions
-    document.documentElement.style.scrollBehavior = 'auto';
+    // Force instant scroll to top on every route change
+    // We temporarily disable smooth scroll, scroll immediately, then restore
+    const htmlEl = document.documentElement;
+    const prevBehavior = htmlEl.style.scrollBehavior;
+    htmlEl.style.scrollBehavior = 'auto';
     window.scrollTo(0, 0);
-    
-    const timeoutId = setTimeout(() => {
-      document.documentElement.style.scrollBehavior = '';
-    }, 10);
-
-    return () => clearTimeout(timeoutId);
+    // Restore after one frame so subsequent user-initiated scrolls stay smooth
+    requestAnimationFrame(() => {
+      htmlEl.style.scrollBehavior = prevBehavior;
+    });
   }, [pathname]);
 
   return null;

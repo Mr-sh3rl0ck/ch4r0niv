@@ -9,11 +9,13 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
 import ScrollReset from './components/ScrollReset'
+import DevBanner from './components/DevBanner'
 
 function App() {
   return (
     <HashRouter>
       <ScrollReset />
+      <DevBanner />
       <div className="app-layout">
         <Header />
         <main style={{ flex: 1 }}>
@@ -33,3 +35,4 @@ function App() {
 }
 
 export default App
+

@@ -4,7 +4,7 @@ function Footer() {
   return (
     <footer className="site-footer" id="site-footer">
       <div className="footer-left">
-        <p>&copy; {new Date().getFullYear()} CH4R0N IV — Security Research</p>
+        <p>&copy; {new Date().getFullYear()} AXL — Security Research</p>
       </div>
       <div className="footer-right">
         <a href="https://github.com/axlcs" target="_blank" rel="noopener noreferrer">Github</a>
